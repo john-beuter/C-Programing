@@ -1,3 +1,7 @@
+#Ignore a directory
+308/ 
+
+
 *.json
 *.o
 # Prerequisites
