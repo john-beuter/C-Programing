@@ -39,8 +39,6 @@ int main(void)
     STARTUPINFOW si = { 0 }; //Specifies unicode, gives the data a uniform formate so it can be understood by other computers
     PROCESS_INFORMATION info = { 0 }; //Had some issues with the formating here. In Windows API there is some different variable types that all looks similar
     //LPPROCESS is different than PROCESS 
-    
-
     if(MK_SHIFT) //When the left click button is pressed spawn a process. 
     {
             if(!CreateProcessW( //Spawns a notepad instance!!
@@ -63,5 +61,19 @@ int main(void)
     {
          return 0;
     }
+
+    // HANDLE OpenProcess(
+    //     [in] DWORD dwDesiredAccess,
+    //     [in] BOOL  bInheritHandle,
+    //     [in] DWORD dwProcessId
+    //     );
+
+    OpenProcess(
+        PROCESS_ALL_ACCESS, //Default
+        FALSE, 
+        //PID
+    );
+
+
     return EXIT_SUCCESS; 
 }
