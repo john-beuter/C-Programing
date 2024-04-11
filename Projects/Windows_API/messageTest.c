@@ -21,6 +21,7 @@ int main(void)
         MB_YESNO | MB_ICONWARNING //Specifies that we want a yes, no, cancel
         //Outputs with an exclamation
     );
+    
 
     //
     // BOOL CreateProcessA(
@@ -68,11 +69,6 @@ int main(void)
     //     [in] DWORD dwProcessId
     //     );
 
-    OpenProcess(
-        PROCESS_ALL_ACCESS, //Default
-        FALSE, 
-        //PID
-    );
 
 
     return EXIT_SUCCESS; 
