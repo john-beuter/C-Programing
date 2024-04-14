@@ -44,7 +44,9 @@ int main(int argc, char * argv[])
 
     //Make our process happen
     WriteProcessMemory(hProcess, rBuffer, test, testSize, NULL);
-    printf("%s wrote shellcode to the buffer\n", k);
+    printf("%s wrote shellcode to the buffer\n", k); //Now I need to have a thread that envokes the information in that buffer
+
+    
 
 
     return EXIT_SUCCESS;
