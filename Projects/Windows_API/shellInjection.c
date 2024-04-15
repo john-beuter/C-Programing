@@ -66,7 +66,9 @@ int main(int argc, char * argv[])
         return EXIT_FAILURE;
     }
 
-    
+    printf("%s waiting for thread to finish\n", k);
+    WaitForSingleObject(hThread, INFINITE);
+    printf("%s thread finished executing\n", k);
 
     return EXIT_SUCCESS;
 }
