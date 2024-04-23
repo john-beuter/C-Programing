@@ -3,7 +3,7 @@
 
 int main() {
     // Command to execute PowerShell
-    LPSTR command = "powershell -Command Get-Process | ?{$_.Name -eq 'test'} | Select-Object -ExpandProperty Id";
+    LPSTR command = "powershell -Command Get-Process | ?{$_.Name -eq ''} | Select-Object -ExpandProperty Id";
     //Need to write output from this to buffer
 
 
