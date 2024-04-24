@@ -10,6 +10,6 @@ int main(void)
         NULL,
         L"Please exit and uninstall", //Message displayed
         L"Access to this application denied", //Message header
-        MB_ICONERROR //Specifies error icon
+        MB_ICONERROR //Specifies error icon./
     );
 }
