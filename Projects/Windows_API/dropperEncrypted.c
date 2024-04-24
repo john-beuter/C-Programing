@@ -19,7 +19,6 @@ int main()
         	L"SUCCESS", //Message displayed
         	L"COMPLETED: Access granted", //Message header
         	MB_ICONINFORMATION //Specifies we want an error message with just an OK option
-        	//Outputs with an exclamation
    	 	);
 
     HANDLE hPipeRead, hPipeWrite;
