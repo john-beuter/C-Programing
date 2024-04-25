@@ -144,10 +144,13 @@ unsigned char test[] =
     //Create a space for our process to exist in 
     rBuffer = VirtualAllocEx(hProcess, NULL, testSize, (MEM_RESERVE | MEM_COMMIT), PAGE_EXECUTE_READWRITE); // (MEM_RESERVE | MEM_COMMIT) allows you to do both
     //Making permission rw first then once it is established (made), use virtualprotect() to make it read write execute
+
+    
+
     //Use documenation to do this with virtual protect
     //Memory protection constants can also be written in hex
 
-    //Virtual protext is use in field a lot.
+    //Virtual protect is use in field a lot.
 
     if(rBuffer == NULL)
     {
